@@ -16,7 +16,7 @@ const App: React.FC = () => {
 
   const addTodo = (title: string) => {
     axios
-      .post<Todo>(API_URL, { title })
+      .post<Todo>(`${API_URL}/create`, { title })
       .then((res) => setTodos((prev) => [...prev, res.data]))
       .catch((err) => console.error(err));
   };
