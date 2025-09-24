@@ -6,8 +6,7 @@ import TodoList from "./componets/Todolist/Todolist";
 
 const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const API_URL = process.env.REACT_APP_API_URL;
-
+  const API_URL = import.meta.env.VITE_API_URL;
   useEffect(() => {
     axios
       .get<Todo[]>(API_URL)
